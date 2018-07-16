@@ -1,0 +1,43 @@
+.common-input{
+  border: 1px solid #c7c3c3;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 24px;
+  box-sizing: border-box;
+  // display: block;
+}
+:local(section.per-column-filter){
+  &.text{
+    input{
+      width: 100%;
+      @extend .common-input;
+    }
+  }
+  &.calendar{
+    .DateInput{
+      padding: 0;
+      width: 98px;
+      input{
+        @extend .common-input;
+        opacity: 1;
+        font-size: 10px;
+        // padding: 0px;
+        &::placeholder{ font-size: 14px; }
+      }
+      .DateInput__display-text{ display: none; }
+    }
+    .DateRangePickerInput__arrow{
+      margin-left: 5px; margin-right: 5px;
+      height: 20px;
+      svg{ width: 15px; }
+    }
+  }
+  &.select{
+    a.toggler{
+      @extend .common-input;
+      font-weight: normal;
+      color: grey;
+    }
+  }
+}

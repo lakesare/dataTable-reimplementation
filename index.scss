@@ -1,0 +1,75 @@
+@import 'css/variables';
+:local(div.container){
+  > section.dataTable-wrapper{
+    position: relative; // for .loading
+    > table{
+      > thead{
+        // paddings
+        > tr.titles > th{ padding-top: 5px; }
+        > tr.filters > th{ padding-bottom: 10px; }
+
+        // Action
+        > tr.titles > th.action{
+          text-align: center;
+          width: 85px;
+        }
+        > tr.filters > th.action{
+          button{
+            min-width: 0;
+            margin: 0 auto;
+            width: 72px;
+            padding: 4px 2px;
+          }
+        }
+      }
+      > tbody{
+        > tr{
+          &.created{ background: rgba(99, 255, 99, 0.36); }
+          &.updated{ background: rgba(255, 255, 0, 0.18); }
+          &.deleted{ opacity: 0.2; }
+          &:hover{
+            background: rgba(223, 229, 249, 0.55);
+          }
+
+          > td.action{
+            text-align: center;
+          }
+        }
+      }
+    }
+    > div.loading{
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+
+      background: rgba(255, 255, 255, 0.63);
+      margin: 0;
+      border-radius: 5px;
+
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // temporarily remove vertical toolbar
+    > section.vertical-toolbar{ display: none; }
+    // make space for .vertical-toolbar
+    // > table{
+    //   width: calc(100% - 50px);
+    //   border-top-right-radius: 0px;
+    //   border-bottom-right-radius: 0px;
+    // }
+    > section.vertical-toolbar{
+      background: #6a6a6b;
+      box-shadow: 0 0 0 1px #dadcde;
+      position: absolute;
+      right: 0; left: calc(100% - 50px);
+      top: 0; bottom: 0;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      color: white;
+    }
+  }
+}

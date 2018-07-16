@@ -1,0 +1,47 @@
+@import 'css/variables';
+:local(section.pagination){
+  > ul{
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    > li{
+      padding: 0 5px;
+      // clickable page numebrs
+      &.page-n{
+        &.current{
+          cursor: default;
+          font-size: 20px;
+          font-weight: bold;
+          color: $black;
+          &:hover{
+            color: $black;
+            text-decoration: none;
+          }
+        }
+        &:not(.current){
+          cursor: pointer;
+          color: $dark_blue;
+          &:hover{
+            color: #014661; // darker blue
+            text-decoration: none;
+          }
+        }
+      }
+      // previous and next arrows
+      &.arrow{
+        &.active{
+          cursor: pointer;
+          color: $dark_blue;
+        }
+        &.disabled{
+          cursor: default;
+          color: #d0d2d4; // light grey
+        }
+
+        .fa-chevron-left{ padding-right: 10px; }
+        .fa-chevron-right{ padding-left: 10px; }
+      }
+    }
+  }
+}

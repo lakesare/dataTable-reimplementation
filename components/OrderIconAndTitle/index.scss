@@ -1,0 +1,15 @@
+@import 'css/variables';
+:local(section.order-icon_and_title){
+  margin-bottom: 6px;
+  &.sortable{
+    cursor: pointer;
+    i{
+      padding-right: 10px;
+      color: #d6d0d0;
+      &.fa-sort-asc, &.fa-sort-desc{
+        color: $dark_blue;
+      }
+    }
+    &:hover{ i{ color: $dark_blue; } }
+  }
+}
